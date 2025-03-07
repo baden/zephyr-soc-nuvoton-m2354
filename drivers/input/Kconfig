@@ -1,0 +1,15 @@
+if INPUT
+
+menu "Input drivers"
+
+rsource "Kconfig.analog"
+
+
+config POST_INPUT_INIT_PRIORITY
+    int "Must be greater then INPUT_INIT_PRIORITY by 1"
+    default 91
+
+
+endmenu
+
+endif # INPUT

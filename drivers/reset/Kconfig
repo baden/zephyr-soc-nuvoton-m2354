@@ -1,0 +1,17 @@
+# Reset Controller driver configuration options
+
+# Copyright (c) 2022 Andrei-Edward Popa <andrei.popa105@yahoo.com>
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# Reset Controller options
+#
+
+if RESET
+
+
+comment "Reset Controller Drivers"
+
+rsource "Kconfig.numaker"
+
+endif # RESET

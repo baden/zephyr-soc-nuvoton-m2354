@@ -1,0 +1,6 @@
+family:
+- name: numaker
+  series:
+  - name: m2354
+    socs:
+    - name: m2354

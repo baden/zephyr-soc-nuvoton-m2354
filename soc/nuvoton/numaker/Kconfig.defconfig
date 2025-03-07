@@ -1,0 +1,18 @@
+# Copyright (c) 2023 Nuvoton Technology Corporation.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+rsource "*/Kconfig.defconfig.series"
+
+if SOC_FAMILY_NUMAKER
+
+config RESET
+	default y
+
+# DT
+DT_SYSCLK_PATH := $(dt_nodelabel_path,sysclk)
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default $(dt_node_int_prop_int,$(DT_SYSCLK_PATH),clock-frequency) if CORTEX_M_SYSTICK
+
+endif

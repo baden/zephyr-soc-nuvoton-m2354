@@ -1,0 +1,20 @@
+# GPIO configuration options
+
+# Copyright (c) 2015 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+# menuconfig GPIO
+# 	bool "General-Purpose Input/Output (GPIO) drivers"
+# 	help
+# 	  Include GPIO drivers in system config
+
+if GPIO
+
+# module = GPIO
+# module-str = gpio
+# #source "subsys/logging/Kconfig.template.log_config"
+
+
+rsource "Kconfig.numaker"
+
+endif # GPIO

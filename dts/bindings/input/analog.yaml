@@ -1,0 +1,74 @@
+# Copyright 2023 Google LLC
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  ADC based analog input device
+
+  Implement an input device generating input events by periodically
+  reading from some ADC channels.
+  Each input has a resistor divider r1_top and r1_bottom.
+
+  Example configuration:
+
+  #include <zephyr/dt-bindings/input/input-event-codes.h>
+
+  analog_input {
+          compatible = "analog-input";
+          poll-period-ms = <32>;
+          // Must be sorted by increasing ADC channel number
+          io-channels = <&adc 0> <&adc 1>;
+          in1 {
+                  index = <0>;
+                  id = <1>;
+                  r_top = <1100>;
+                  r_bottom = <200>;
+                  // zephyr,axis = <INPUT_ABS_X>;
+          };
+  };
+
+compatible: "analog-input"
+
+include: base.yaml
+
+properties:
+  poll-period-ms:
+    type: int
+    default: 32
+    description: |
+      How often to get new ADC samples for the various configured axes in
+      milliseconds. Defaults to 32ms if unspecified.
+
+child-binding:
+  properties:
+    # TODO: Remove it!
+    io-channels:
+      type: phandle-array
+      required: true
+      description: |
+        ADC IO channel to use.
+    id:
+      type: int
+      required: true
+      description: |
+        ADC IO channel id in buffer.
+        This is not a ADC channel number, but a index in the io-channels property.
+
+    r_top:
+      type: int
+      default: 1000
+      description: |
+        Resistance of the top resistor in the voltage divider.
+
+    r_bottom:
+      type: int
+      default: 1000
+      description: |
+        Resistance of the bottom resistor in the voltage divider.
+
+    # zephyr,axis:
+    #   type: int
+    #   required: true
+    #   description: |
+    #     The input code for the axis to report for the device, typically any of
+    #     INPUT_ABS_*.
+

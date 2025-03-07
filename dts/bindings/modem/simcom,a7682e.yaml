@@ -1,0 +1,34 @@
+description: SIMCOM A7682E GSM modem
+
+compatible: "simcom,a7682e"
+
+
+properties:
+    label:
+      required: true
+      type: string
+      description: Human readable string describing the device (used as device_get_binding() argument)
+
+    status-gpios:
+      type: phandle-array
+      required: true
+      description: |
+        STATUS signal
+
+    dtr-gpios:
+      type: phandle-array
+      required: true
+      description: |
+        DTR signal
+
+    pwrkey-gpios:
+      type: phandle-array
+      required: true
+      description: |
+        PWRKEY signal
+
+    power-gpios:
+      type: phandle-array
+      required: true
+      description: |
+        POWER signal

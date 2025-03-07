@@ -1,0 +1,24 @@
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+#menu "Drivers"
+rsource "clock_control/Kconfig"
+rsource "sensor/Kconfig"
+rsource "flash/Kconfig"
+rsource "gpio/Kconfig"
+rsource "pinctrl/Kconfig"
+rsource "serial/Kconfig"
+rsource "spi/Kconfig"
+rsource "i2c/Kconfig"
+rsource "reset/Kconfig"
+rsource "pwm/Kconfig"
+rsource "can/Kconfig"
+rsource "adc/Kconfig"
+rsource "input/Kconfig"
+
+
+config HAS_NUMAKER_TIMER
+    bool
+    default y
+
+#endmenu

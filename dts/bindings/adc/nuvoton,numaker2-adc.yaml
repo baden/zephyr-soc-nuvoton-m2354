@@ -1,0 +1,37 @@
+# Copyright (c) 2023 Nuvoton Technology Corporation.
+# SPDX-License-Identifier: Apache-2.0
+
+description: Nuvoton, NuMaker ADC controller
+
+compatible: "nuvoton,numaker2-adc"
+
+include: [adc-controller.yaml, reset-device.yaml, pinctrl-device.yaml]
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
+
+  resets:
+    required: true
+
+  clocks:
+    required: true
+
+  channels:
+    type: int
+    description: Number of channels
+    required: true
+
+  "#io-channel-cells":
+    const: 1
+
+  vref-internal-mv:
+    type: int
+    description: Reference voltage in millivolts
+    default: 3000
+
+io-channel-cells:
+  - input

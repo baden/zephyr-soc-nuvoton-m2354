@@ -1,0 +1,18 @@
+# Clock controller driver configuration options
+
+# Copyright (c) 2015 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# Clock controller drivers
+#
+
+if CLOCK_CONTROL
+
+module = CLOCK_CONTROL
+module-str = clock control
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.numaker"
+
+endif # CLOCK_CONTROL

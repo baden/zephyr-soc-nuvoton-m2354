@@ -1,0 +1,168 @@
+/*
+ * Copyright (c) 2023 Nuvoton Technology Corporation.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "pinctrl/m2354sjfae-pinctrl.h"
+#include <zephyr/dt-bindings/pinctrl/numaker-m2354-pinctrl.h>
+
+&pinctrl {
+
+    // UARTs
+
+    /omit-if-no-ref/ uart3_pc2_pc3: uart3_pc2_pc3 {
+        group0 {
+            pinmux = <PC2MFP_UART3_RXD>, <PC3MFP_UART3_TXD>;
+        };
+    };
+
+    /omit-if-no-ref/ uart5_pa4_pa5: uart3_pa4_pa5 {
+        group0 {
+            pinmux = <PA4MFP_UART5_RXD>, <PA5MFP_UART5_TXD>;
+        };
+    };
+
+    /omit-if-no-ref/ uart3_pb15_pb14: uart3_pb15_pb14 {
+        group0 {
+            pinmux = <PB14MFP_UART3_RXD>, <PB15MFP_UART3_TXD>;
+        };
+    };
+ 
+
+    //ADCs
+    /omit-if-no-ref/ eadc_pb0: eadc_pb0 {
+        group0 {
+            pinmux = <PB0MFP_EADC0_CH0>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb1: eadc_pb1 {
+        group0 {
+            pinmux = <PB1MFP_EADC0_CH1>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb2: eadc_pb2 {
+        group0 {
+            pinmux = <PB2MFP_EADC0_CH2>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb3: eadc_pb3 {
+        group0 {
+            pinmux = <PB3MFP_EADC0_CH3>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb4: eadc_pb4 {
+        group0 {
+            pinmux = <PB4MFP_EADC0_CH4>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb5: eadc_pb5 {
+        group0 {
+            pinmux = <PB5MFP_EADC0_CH5>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb6: eadc_pb6 {
+        group0 {
+            pinmux = <PB6MFP_EADC0_CH6>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb7: eadc_pb7 {
+        group0 {
+            pinmux = <PB7MFP_EADC0_CH7>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb8: eadc_pb8 {
+        group0 {
+            pinmux = <PB8MFP_EADC0_CH8>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb9: eadc_pb9 {
+        group0 {
+            pinmux = <PB9MFP_EADC0_CH9>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb10: eadc_pb10 {
+        group0 {
+            pinmux = <PB10MFP_EADC0_CH10>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb11: eadc_pb11 {
+        group0 {
+            pinmux = <PB11MFP_EADC0_CH11>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb12: eadc_pb12 {
+        group0 {
+            pinmux = <PB12MFP_EADC0_CH12>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb13: eadc_pb13 {
+        group0 {
+            pinmux = <PB13MFP_EADC0_CH13>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb14: eadc_pb14 {
+        group0 {
+            pinmux = <PB14MFP_EADC0_CH14>;
+        };
+    };
+    /omit-if-no-ref/ eadc_pb15: eadc_pb15 {
+        group0 {
+            pinmux = <PB15MFP_EADC0_CH15>;
+        };
+    };
+
+
+    // SPIs
+
+    /omit-if-no-ref/ spi2_pa9_pa8_pa10: spi2_pa9_pa8_pa10 {
+        group0 {
+            pinmux = <PA9MFP_SPI2_MISO>, <PA8MFP_SPI2_MOSI>, <PA10MFP_SPI2_CLK>;
+        };
+    };
+    
+    // I2C
+    /omit-if-no-ref/ i2c1_pa7_pa6: i2c1_pa7_pa6 {
+        group0 {
+            // NUMAKER_SYS_GPA_MFPL_PA7MFP_I2C1_SCL
+            // NUMAKER_SYS_GPA_MFPL_PA6MFP_I2C1_SDA
+            pinmux = <PA7MFP_I2C1_SCL>, <PA6MFP_I2C1_SDA>;
+        };
+    };
+ 
+    // /* TX/RX/RTS/CTS/RST --> D1/D0/A2/A3/D2 --> PB3/PB2/PB8/PB9/PC9 */
+    // uart1_default: uart1_default {
+    // 	group0 {
+    // 		pinmux = <PB9MFP_UART1_nCTS>,
+    // 			 <PB8MFP_UART1_nRTS>,
+    // 			 <PB2MFP_UART1_RXD>,
+    // 			 <PB3MFP_UART1_TXD>,
+    // 			 <PC9MFP_GPIO>;
+    // 	};
+    // };
+ 
+    // /* CAN TX/RX --> PJ10/PJ11 */
+    // canfd0_default: canfd0_default {
+    // 	group0 {
+    // 		pinmux = <PJ10MFP_CAN0_TXD>,
+    // 			 <PJ11MFP_CAN0_RXD>;
+    // 	};
+    // };
+ 
+    // /* EMAC multi-function pins for MDIO, TX, REFCLK, RX pins */
+    // emac_default: emac_default {
+    // 	group0 {
+    // 		pinmux = <PE8MFP_EMAC0_RMII_MDC>,
+    // 			 <PE9MFP_EMAC0_RMII_MDIO>,
+    // 			 <PE10MFP_EMAC0_RMII_TXD0>,
+    // 			 <PE11MFP_EMAC0_RMII_TXD1>,
+    // 			 <PE12MFP_EMAC0_RMII_TXEN>,
+    // 			 <PC8MFP_EMAC0_RMII_REFCLK>,
+    // 			 <PC7MFP_EMAC0_RMII_RXD0>,
+    // 			 <PC6MFP_EMAC0_RMII_RXD1>,
+    // 			 <PA7MFP_EMAC0_RMII_CRSDV>,
+    // 			 <PA6MFP_EMAC0_RMII_RXERR>,
+    // 			 <PB6MFP_EMAC0_PPS>;
+    // 	};
+    // };
+};

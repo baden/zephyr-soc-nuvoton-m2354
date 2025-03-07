@@ -1,0 +1,26 @@
+# Copyright (c) 2023 Nuvoton Technology Corporation.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_M2354
+	bool "Nuvoton M2354 Series MCU"
+	select ARM
+	select CPU_CORTEX_M23
+	# select CPU_CORTEX_M_HAS_DWT
+	# #select CPU_HAS_FPU
+	select CPU_CORTEX_M_HAS_VTOR
+	select CPU_HAS_ARM_SAU
+	select CPU_HAS_ARM_MPU
+	select CORTEX_M_SYSTICK if SYS_CLOCK_EXISTS
+	select CPU_CORTEX_M_HAS_SPLIM
+	select CPU_CORTEX_M_HAS_SYSTICK
+	# select CORTEX_M_SYSTICK_INSTALL_ISR
+	select SOC_FAMILY_NUMAKER
+	
+	# select HAS_NUMAKER_GPIO
+	# select HAS_NUMAKER_FMC
+
+	# select SOC_FLASH_NUMAKER2
+
+	help
+	  Enable support for Nuvoton M2354 MCU series

@@ -1,0 +1,15 @@
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig PINCTRL
+	bool "Pin controller drivers"
+
+if PINCTRL
+
+module = PINCTRL
+module-str = PINCTRL
+# source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.numaker"
+
+endif # PINCTRL

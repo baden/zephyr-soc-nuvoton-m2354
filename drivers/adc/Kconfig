@@ -1,0 +1,24 @@
+# ADC configuration options
+
+# Copyright (c) 2015 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# ADC options
+#
+# menuconfig ADC
+# 	bool "Analog-to-Digital Converter (ADC) drivers"
+# 	# All platforms that implement the ADC driver are now required to
+# 	# provide relevant DTS entries.
+# 	help
+# 	  Enable ADC (Analog to Digital Converter) driver configuration.
+
+if ADC
+
+module = ADC
+module-str = ADC
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.numaker"
+
+endif # ADC

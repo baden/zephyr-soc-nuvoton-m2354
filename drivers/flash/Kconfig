@@ -1,0 +1,23 @@
+# Flash driver configuration options
+
+# Copyright (c) 2016 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# Flash driver
+#
+
+menuconfig FLASH
+	bool "Flash drivers"
+	help
+	  Enable support for the flash hardware.
+
+if FLASH
+
+module = FLASH
+module-str = flash
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.numaker"
+
+endif # FLASH

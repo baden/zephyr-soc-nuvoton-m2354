@@ -1,0 +1,18 @@
+# I2C configuration options
+
+# Copyright (c) 2015 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# I2C options
+#
+
+if I2C
+
+module = I2C
+module-str = i2c
+#source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.numaker"
+
+endif # I2C

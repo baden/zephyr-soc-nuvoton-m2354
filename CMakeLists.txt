@@ -6,6 +6,6 @@
 
 #zephyr_include_directories(include)
 # zephyr_include_directories(drivers)
-#zephyr_include_directories(.)
+zephyr_include_directories(.)
 
 add_subdirectory(drivers)

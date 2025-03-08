@@ -5,4 +5,3 @@ if SENSOR
 rsource "examplesensor/Kconfig"
 endif # SENSOR
 
-rsource "shock_sensor/Kconfig"
